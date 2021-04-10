@@ -11,7 +11,7 @@ var io = require("socket.io")(server, {
   }
 });
 
-server.listen(process.env.PORT || 80);
+server.listen(process.env.PORT);
 
 var userId = 0;
 io.on('connection', function(socket){
