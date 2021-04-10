@@ -1,10 +1,17 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+const express = require('express');
+const app = express();
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
+var server = require("http").Server(app);
+var io = require("socket.io")(server, {
+  cors: {
+    origin: '*'
+  }
+});
+
+server.listen(process.env.PORT || 80);
 
 var userId = 0;
 io.on('connection', function(socket){
@@ -17,5 +24,3 @@ io.on('connection', function(socket){
     });
   });
 });
-
-http.listen(process.env.PORT || 80);
