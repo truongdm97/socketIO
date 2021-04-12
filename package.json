@@ -1,10 +1,15 @@
 {
-  "name": "socket.io-unity-test-server",
+  "name": "serversocket",
   "version": "1.0.0",
-  "description": "test server in node.js for socket.io-unity",
+  "description": "",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3",
+    "express": "^4.17.1",
     "socket.io": "^2.0.1"
   }
 }

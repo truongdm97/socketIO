@@ -20,12 +20,12 @@
   $(function () {
     var socket = io();
     $('form').submit(function(){
-      socket.emit('chat', $('#m').val());
+      socket.emit('beep', $('#m').val());
       $('#m').val('');
       return false;
     });
-    socket.on('chat', function(data){
-      $('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg));
+    socket.on('boop', function(data){
+      $('#messages').append($('<li>').text("user#: " + data));
     });
   });
 </script>
